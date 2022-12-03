@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Botics</string>
+    <string name="bienvenue_sur_boctics">Bienvenue sur Boctics</string>
+    <string name="todo">TODO</string>
 </resources>

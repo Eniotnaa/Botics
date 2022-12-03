@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/gradient_drawble"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,8 +10,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenue sur Boctics"
-        android:textSize="32dp"
+        android:text="@string/bienvenue_sur_boctics"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,9 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/icon_foreground"
         tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="473dp" />
+        tools:layout_editor_absoluteY="473dp"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView2"
@@ -30,7 +33,9 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/fruit_foreground"
         tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="100dp" />
+        tools:layout_editor_absoluteY="100dp"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/todo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -38,6 +43,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/gym_foreground"
         tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="98dp" />
+        tools:layout_editor_absoluteY="98dp"
+        tools:ignore="MissingConstraints"
+        android:contentDescription="@string/todo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
