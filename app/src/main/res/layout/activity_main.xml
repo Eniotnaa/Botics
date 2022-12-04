@@ -8,10 +8,12 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bienvenue_sur_boctics"
-        android:textSize="32sp"
+        android:textSize="48sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,32 +21,52 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="163dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toBottomOf="@id/decouvrir"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@mipmap/icon_foreground"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="473dp"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/todo" />
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="143dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/fruit_foreground"
-        tools:layout_editor_absoluteX="67dp"
-        tools:layout_editor_absoluteY="100dp"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/todo" />
+        tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="124dp"
+        android:layout_height="139dp"
+        android:contentDescription="@string/todo"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/gym_foreground"
-        tools:layout_editor_absoluteX="246dp"
-        tools:layout_editor_absoluteY="98dp"
-        tools:ignore="MissingConstraints"
-        android:contentDescription="@string/todo" />
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/decouvrir"
+        android:layout_width="323dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#F4A460"
+        android:text="Découvrir"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
