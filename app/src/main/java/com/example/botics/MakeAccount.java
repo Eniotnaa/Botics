@@ -7,18 +7,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Presentation5 extends AppCompatActivity {
+public class MakeAccount extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_presentation5);
+        setContentView(R.layout.activity_make_account);
 
-        Button suivant = (Button) findViewById(R.id.suivant);
-        suivant.setOnClickListener(new View.OnClickListener() {
+        Button with_phone = (Button) findViewById(R.id.with_phone);
+        with_phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Presentation5.this, MakeAccount.class);
+                Intent intent = new Intent(MakeAccount.this, AskPhone.class);
                 startActivity(intent);
             }
         });
