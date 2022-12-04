@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<shape xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:ignore="ExtraText">
-     <gradient android:startColor="#fe7200" android:endColor="#ffffff" android:angle="270"/>`
-    <!-- Pour savoir pourquoi un angle de 270° : lire la partie de la doc sur android:angle ! -->
-</shape>
