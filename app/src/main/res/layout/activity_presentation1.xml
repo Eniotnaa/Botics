@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Presentation1">
 
     <LinearLayout
@@ -26,6 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:gravity="center"
+            android:textColor="@color/black"
             android:text="1/5"
             android:textSize="34sp" />
 
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:textColor="@color/black"
             android:text="Soit un Botik"
             android:textSize="30sp" />
 
@@ -42,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:textColor="@color/black"
             android:text="Be Better, Be Boctics"
             android:textSize="30sp" />
     </LinearLayout>
@@ -51,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Organise des scéances d'entraînement en tant que coach"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,6 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Partage ton alimentation et tes entrainements avec d'autres Botiker"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Améliore ta nutrition et ta condition physique"
         app:layout_constraintBottom_toTopOf="@id/suivant"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +92,7 @@
         android:layout_width="323dp"
         android:layout_height="58dp"
         android:backgroundTint="#F4A460"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:cornerRadius="24dp"
         app:layout_constraintBottom_toBottomOf="parent"

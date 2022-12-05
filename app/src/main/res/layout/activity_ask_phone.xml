@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AskPhone">
 
     <LinearLayout
@@ -33,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Numéro de télépone"
+            android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
@@ -42,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:background="@drawable/border_input_text"
             android:hint="Phone number"
             android:inputType="phone"
             android:minHeight="48dp"/>
