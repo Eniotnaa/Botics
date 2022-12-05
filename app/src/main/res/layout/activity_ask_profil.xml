@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AskProfil">
 
     <LinearLayout
@@ -21,6 +22,7 @@
             android:id="@+id/textProfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="TON PROFIL"
             android:textSize="28sp"
             android:textStyle="bold"/>
@@ -43,6 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Prénom"
+            android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
@@ -52,6 +55,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:textColor="@color/black"
+            android:background="@drawable/border_input_text"
             android:hint="Ex : Yanis"
             android:inputType="text"
             android:minHeight="24dp" />
@@ -60,6 +65,7 @@
             android:id="@+id/textNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="Nom"
             android:textSize="28sp"
             android:textStyle="bold" />
@@ -70,6 +76,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:ems="10"
+            android:textColor="@color/black"
+            android:background="@drawable/border_input_text"
             android:hint="Ex: EL BEILK"
             android:inputType="text"
             android:minHeight="24dp" />
