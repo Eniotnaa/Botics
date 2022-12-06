@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AskProfil">
+    tools:context=".AskSize">
 
     <LinearLayout
         android:id="@+id/linearLayoutTop"
@@ -23,72 +23,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="TON PROFIL"
+            android:text="TA TAILLE (EN CM)"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="250dp"
-        android:layout_marginLeft="30sp"
-        android:gravity="left"
-        android:orientation="vertical"
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_input_text"
+        android:ems="10"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTop">
-
-        <TextView
-            android:id="@+id/textPrenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Prénom"
-            android:textColor="@color/black"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/inputPrenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/border_input_text"
-            android:ems="10"
-            android:hint="Ex : Yanis"
-            android:inputType="text"
-            android:layout_marginTop="20dp"
-            android:minHeight="24dp"
-            android:paddingLeft="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="#393939" />
-
-        <TextView
-            android:id="@+id/textNom"
-            android:layout_marginTop="40dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Nom"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/inputNom"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
-            android:background="@drawable/border_input_text"
-            android:hint="Ex: EL BEILK"
-            android:inputType="text"
-            android:minHeight="24dp"
-            android:paddingLeft="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="#393939"/>
-    </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTop" />
 
     <LinearLayout
         android:id="@+id/linearLayoutBottom"
@@ -113,5 +69,6 @@
             android:textColor="@color/white"
             app:cornerRadius="24dp"/>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
