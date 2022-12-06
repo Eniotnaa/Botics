@@ -7,18 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class AskProfil extends AppCompatActivity {
+public class AskUsername extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ask_profil);
+        setContentView(R.layout.activity_ask_username);
 
+        // ---------- Listener sur le bouton continuer ----------
         Button continuer = (Button) findViewById(R.id.continuer);
         continuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AskProfil.this, AskGender.class);
+                Intent intent = new Intent(AskUsername.this, MakeAccount.class);
                 startActivity(intent);
             }
         });

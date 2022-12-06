@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AskProfil">
+    tools:context=".AskUsername">
 
     <LinearLayout
         android:id="@+id/linearLayoutTop"
@@ -23,71 +23,95 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="TON PROFIL"
+            android:text="TON USERNAME (@)"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="250dp"
-        android:layout_marginLeft="30sp"
-        android:gravity="left"
+        android:layout_width="409dp"
+        android:layout_height="400dp"
+        android:layout_marginStart="40dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTop">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTop">
 
         <TextView
-            android:id="@+id/textPrenom"
-            android:layout_width="wrap_content"
+            android:id="@+id/textPseudo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Prénom"
+            android:text="Pseudo"
             android:textColor="@color/black"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/inputPrenom"
-            android:layout_width="wrap_content"
+            android:id="@+id/inputPseudo"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:background="@drawable/border_input_text"
             android:ems="10"
-            android:hint="Ex : Yanis"
+            android:hint="Ex : monpseudo75"
             android:inputType="text"
-            android:layout_marginTop="20dp"
             android:minHeight="24dp"
             android:paddingLeft="20dp"
             android:textColor="@color/black"
             android:textColorHint="#393939" />
 
         <TextView
-            android:id="@+id/textNom"
-            android:layout_marginTop="40dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/textMail"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Adresse e-mail"
             android:textColor="@color/black"
-            android:text="Nom"
             android:textSize="28sp"
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/inputNom"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
+            android:id="@+id/inputMail"
+            android:layout_width="370dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:ems="10"
             android:background="@drawable/border_input_text"
-            android:hint="Ex: EL BEILK"
+            android:ems="10"
+            android:hint="Ex : prenom.nom@gmail.com"
             android:inputType="text"
             android:minHeight="24dp"
             android:paddingLeft="20dp"
             android:textColor="@color/black"
-            android:textColorHint="#393939"/>
+            android:textColorHint="#393939" />
+
+        <TextView
+            android:id="@+id/textMdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Mot de passe"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/inputMdp"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_input_text"
+            android:ems="10"
+            android:hint="Ex : Ed7LZ97nLC"
+            android:inputType="text"
+            android:minHeight="24dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="#393939" />
     </LinearLayout>
 
     <LinearLayout
@@ -109,9 +133,10 @@
             android:layout_marginRight="20sp"
             android:layout_weight="1"
             android:backgroundTint="#830000"
-            android:text="Continuer"
+            android:text="Rejoindre BOTICS"
             android:textColor="@color/white"
             app:cornerRadius="24dp"/>
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
