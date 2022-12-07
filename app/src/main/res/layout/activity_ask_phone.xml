@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".AskPhone">
 
     <LinearLayout
@@ -21,30 +22,34 @@
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="134dp"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTop"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutTop">
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Numéro de télépone"
+            android:textColor="@color/black"
             android:textSize="28sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextPhone"
-            android:layout_width="wrap_content"
+            android:layout_width="232dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
-            android:ems="10"
-            android:hint="Phone number"
+            android:background="@drawable/border_input_text"
+            android:hint="Ex : 0123456789"
             android:inputType="phone"
-            android:minHeight="48dp"/>
+            android:minHeight="48dp"
+            android:paddingLeft="20dp"
+            android:textColorHint="#393939" />
     </LinearLayout>
 
 
@@ -68,6 +73,7 @@
             android:layout_weight="1"
             android:backgroundTint="#830000"
             android:text="Envoyer le code de confirmation"
+            android:textColor="@color/white"
             app:cornerRadius="24dp"/>
     </LinearLayout>
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MakeAccount">
 
     <LinearLayout
@@ -34,12 +35,14 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:text="B O T I C S"
                 android:textSize="34sp" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
+                android:textColor="@color/black"
                 android:layout_height="46dp"
                 android:text="THE ALL-AROUND FITNESS AND NUTRITION APP" />
         </LinearLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".Presentation2">
 
     <LinearLayout
@@ -27,6 +28,7 @@
             android:layout_weight="10"
             android:gravity="center"
             android:text="2/5"
+            android:textColor="@color/black"
             android:textSize="34sp" />
 
         <TextView
@@ -34,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
+            android:textColor="@color/black"
             android:text="BE AWARE"
             android:textSize="30sp" />
     </LinearLayout>
@@ -43,6 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/black"
         android:text="Toutes les informations pour trouver :"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,6 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="left"
+        android:textColor="@color/black"
         android:text="Des coachs \nDes nutritionnistes \nDes partenaires Botics \nDes évenements \nDes séances d'entrainements"
         app:layout_constraintBottom_toTopOf="@+id/suivant"
         app:layout_constraintEnd_toEndOf="parent"

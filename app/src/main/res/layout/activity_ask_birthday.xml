@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".AskProfil">
+    tools:context=".AskBirthday">
 
     <LinearLayout
         android:id="@+id/linearLayoutTop"
@@ -23,71 +23,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:text="TON PROFIL"
+            android:text="QUAND ES-TU NÉ ?"
             android:textSize="28sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="380dp"
-        android:layout_height="250dp"
-        android:layout_marginLeft="30sp"
-        android:gravity="left"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutTop">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textPrenom"
+        <Spinner
+            android:id="@+id/spinner_day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prénom"
-            android:textColor="@color/black"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/inputPrenom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:background="@drawable/border_input_text"
-            android:ems="10"
-            android:hint="Ex : Yanis"
-            android:inputType="text"
-            android:layout_marginTop="20dp"
-            android:minHeight="24dp"
-            android:paddingLeft="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="#393939" />
+            android:contentDescription="Jour"
+            android:minHeight="48dp" />
 
-        <TextView
-            android:id="@+id/textNom"
-            android:layout_marginTop="40dp"
+        <Spinner
+            android:id="@+id/spinner_mounth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="Nom"
-            android:textSize="28sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/inputNom"
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="10"
             android:background="@drawable/border_input_text"
-            android:hint="Ex: EL BEILK"
-            android:inputType="text"
-            android:minHeight="24dp"
-            android:paddingLeft="20dp"
-            android:textColor="@color/black"
-            android:textColorHint="#393939"/>
+            android:contentDescription="Mois"
+            android:minHeight="48dp" />
+
+        <Spinner
+            android:id="@+id/spinner_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_input_text"
+            android:contentDescription="Année"
+            android:minHeight="48dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -113,5 +87,7 @@
             android:textColor="@color/white"
             app:cornerRadius="24dp"/>
     </LinearLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
