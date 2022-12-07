@@ -19,7 +19,7 @@ public class AskUsername extends AppCompatActivity {
         continuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AskUsername.this, MakeAccount.class);
+                Intent intent = new Intent(AskUsername.this, Social.class);
                 startActivity(intent);
             }
         });
