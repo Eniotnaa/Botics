@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         decouvrir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, Social.class);
+                Intent intent = new Intent(MainActivity.this, Presentation1.class);
                 startActivity(intent);
             }
         });

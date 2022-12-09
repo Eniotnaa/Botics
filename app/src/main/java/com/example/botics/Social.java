@@ -2,18 +2,17 @@ package com.example.botics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import Entity.Post;
 import Interface.GetPost;
@@ -55,6 +54,16 @@ public class Social extends AppCompatActivity {
             @Override
             public void onFailure(Call<List<Post>> call, Throwable t) {
                 textViewResult.setText(t.getMessage());
+            }
+        });
+
+        //Listener pour le bouton pour publier un post
+        FloatingActionButton createPost = (FloatingActionButton) findViewById(R.id.createPost);
+        createPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Social.this, CreatePost.class);
+                startActivity(intent);
             }
         });
     }
