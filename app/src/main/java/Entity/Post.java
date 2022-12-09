@@ -12,9 +12,7 @@ public class Post {
     private String first_name;
     private String pseudo;
 
-    public int getID_publication() {
-        return ID_publication;
-    }
+    public int getID_publication() { return ID_publication; }
 
     public void setID_publication(int ID_publication) {
         this.ID_publication = ID_publication;

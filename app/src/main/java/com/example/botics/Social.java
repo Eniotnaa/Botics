@@ -4,9 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import Entity.Post;
 import Interface.GetPost;
@@ -19,12 +26,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Social extends AppCompatActivity {
     private TextView textViewResult;
 
+    private ListView listView;
+    private CustomAdapterPost retroAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social);
 
-        textViewResult = findViewById(R.id.text_view_result);
+        listView = findViewById(R.id.listView);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://botics.fr/")
@@ -38,20 +48,8 @@ public class Social extends AppCompatActivity {
         call.enqueue(new Callback<List<Post>>() {
             @Override
             public void onResponse(Call<List<Post>> call, Response<List<Post>> response) {
-                if(!response.isSuccessful()) {
-                    textViewResult.setText("Code : " + response.code());
-                    return;
-                }
-
-                List<Post> posts = response.body();
-
-                for(Post post : posts){
-                    String content = "";
-                    content += "ID : "+ post.getID_publication() + "\n";
-                    content += "Description : "+ post.getDescription() + "\n";
-
-                    textViewResult.append(content);
-                }
+                List<Post> jsonresponse = response.body();
+                writeListView(jsonresponse);
             }
 
             @Override
@@ -59,5 +57,26 @@ public class Social extends AppCompatActivity {
                 textViewResult.setText(t.getMessage());
             }
         });
+    }
+
+    private void writeListView(List<Post> response){
+        ArrayList<Post> ListPost = new ArrayList<>();
+
+        for(Post data : response){
+            Post post = new Post();
+
+            post.setFirst_name(data.getFirst_name());
+            post.setLast_name(data.getLast_name());
+            post.setPseudo("@"+data.getPseudo());
+            post.setDescription(data.getDescription());
+            post.setCount_like(data.getCount_like());
+            post.setCount_comment(data.getCount_comment());
+
+            ListPost.add(post);
+
+        }
+
+        retroAdapter = new CustomAdapterPost(this, ListPost);
+        listView.setAdapter(retroAdapter);
     }
 }
