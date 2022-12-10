@@ -99,7 +99,6 @@ public class AskBirthday extends AppCompatActivity implements AdapterView.OnItem
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
         ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
-        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT ).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {}
