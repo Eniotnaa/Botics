@@ -3,6 +3,7 @@ package com.example.botics;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,7 +45,8 @@ public class CreatePost extends AppCompatActivity {
                 Post post = new Post();
                 EditText publier = (EditText) findViewById(R.id.InputDescription);
                 post.setDescription(publier.getText().toString());
-                int ID_user = 1;//A MODIFIER QUAND LE USER POURRA SE CONNECTER
+                SharedPreferences dataSave = getSharedPreferences("ID_user", 0);
+                Integer ID_user = Integer.parseInt(dataSave.getString("ID_user", ""));
                 post.setID_user(ID_user);
                 //Creation de la requete POST
                 Retrofit retrofit = new Retrofit.Builder()
