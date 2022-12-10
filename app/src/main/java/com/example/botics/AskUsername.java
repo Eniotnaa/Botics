@@ -38,6 +38,15 @@ public class AskUsername extends AppCompatActivity {
                 user.setPseudo(inputPseudo.getText().toString());
                 user.setEmail(inputMail.getText().toString());
                 user.setPassword(inputMdp.getText().toString());
+                //Valeur des pages présédente
+                Bundle extras = getIntent().getExtras();
+                user.setPhone_number(extras.getString("Phone"));
+                user.setFirst_name(extras.getString("first_name"));
+                user.setLast_name(extras.getString("last_name"));
+                user.setGender(extras.getString("Gender"));
+                user.setBirthday(extras.getString("birthday"));
+                user.setSize(Double.valueOf(extras.getString("Size")));
+                user.setWeight(Double.valueOf(extras.getString("Weight")));
                 //Creation de la requete POST
                 Retrofit retrofit = new Retrofit.Builder()
                         .baseUrl("http://botics.fr/")
@@ -57,8 +66,8 @@ public class AskUsername extends AppCompatActivity {
                     }
                 });
                 //Redirection vers la page MakeAccout
-                /*Intent intent = new Intent(AskUsername.this, MakeAccount.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(AskUsername.this, MakeAccount.class);
+                startActivity(intent);
             }
         });
     }
