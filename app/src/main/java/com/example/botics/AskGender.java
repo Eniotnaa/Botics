@@ -20,6 +20,13 @@ public class AskGender extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskGender.this, AskBirthday.class);
+                //On récupère les précédente valeur
+                Bundle extras = getIntent().getExtras();
+                intent.putExtra("Phone", extras.getString("Phone"));
+                intent.putExtra("first_name", extras.getString("first_name"));
+                intent.putExtra("last_name", extras.getString("last_name"));
+                //On continue a ajouter des valeurs pour la page suivante
+                intent.putExtra("Gender", "Homme");
                 startActivity(intent);
             }
         });
@@ -30,6 +37,13 @@ public class AskGender extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskGender.this, AskBirthday.class);
+                //On récupère les précédente valeur
+                Bundle extras = getIntent().getExtras();
+                intent.putExtra("Phone", extras.getString("Phone"));
+                intent.putExtra("first_name", extras.getString("first_name"));
+                intent.putExtra("last_name", extras.getString("last_name"));
+                //On continue a ajouter des valeurs pour la page suivante
+                intent.putExtra("Gender", "Femme");
                 startActivity(intent);
             }
         });
@@ -40,6 +54,13 @@ public class AskGender extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskGender.this, AskBirthday.class);
+                //On récupère les précédente valeur
+                Bundle extras = getIntent().getExtras();
+                intent.putExtra("Phone", extras.getString("Phone"));
+                intent.putExtra("first_name", extras.getString("first_name"));
+                intent.putExtra("last_name", extras.getString("last_name"));
+                //On continue a ajouter des valeurs pour la page suivante
+                intent.putExtra("Gender", "Autre");
                 startActivity(intent);
             }
         });

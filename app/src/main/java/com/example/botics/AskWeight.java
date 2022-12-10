@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class AskWeight extends AppCompatActivity {
 
@@ -20,6 +21,17 @@ public class AskWeight extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskWeight.this, AskUsername.class);
+                //On récupère les précédente valeur
+                Bundle extras = getIntent().getExtras();
+                intent.putExtra("Phone", extras.getString("Phone"));
+                intent.putExtra("first_name", extras.getString("first_name"));
+                intent.putExtra("last_name", extras.getString("last_name"));
+                intent.putExtra("Gender", extras.getString("Gender"));
+                intent.putExtra("birthday", extras.getString("birthday"));
+                intent.putExtra("Size", extras.getString("Size"));
+                //On continue a ajouter des valeurs pour la page suivante
+                EditText editTextNumber = (EditText) findViewById(R.id.editTextNumber);
+                intent.putExtra("Weight", editTextNumber.getText().toString());
                 startActivity(intent);
             }
         });

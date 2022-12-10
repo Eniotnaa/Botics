@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class AskPhone extends AppCompatActivity {
 
@@ -19,6 +20,8 @@ public class AskPhone extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskPhone.this, AskProfil.class);
+                EditText editTextPhone = (EditText) findViewById(R.id.editTextPhone);
+                intent.putExtra("Phone", editTextPhone.getText().toString());
                 startActivity(intent);
             }
         });

@@ -45,6 +45,7 @@
             android:layout_marginTop="40dp"
             android:layout_weight="1"
             android:background="@drawable/border_input_text"
+            android:textColor="@color/black"
             android:hint="Ex : 0123456789"
             android:inputType="phone"
             android:minHeight="48dp"
@@ -72,7 +73,7 @@
             android:layout_marginRight="20sp"
             android:layout_weight="1"
             android:backgroundTint="#830000"
-            android:text="Envoyer le code de confirmation"
+            android:text="Continuer"
             android:textColor="@color/white"
             app:cornerRadius="24dp"/>
     </LinearLayout>
