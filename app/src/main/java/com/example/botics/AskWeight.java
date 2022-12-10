@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AskWeight extends AppCompatActivity {
 
@@ -20,19 +21,23 @@ public class AskWeight extends AppCompatActivity {
         continuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AskWeight.this, AskUsername.class);
-                //On récupère les précédente valeur
-                Bundle extras = getIntent().getExtras();
-                intent.putExtra("Phone", extras.getString("Phone"));
-                intent.putExtra("first_name", extras.getString("first_name"));
-                intent.putExtra("last_name", extras.getString("last_name"));
-                intent.putExtra("Gender", extras.getString("Gender"));
-                intent.putExtra("birthday", extras.getString("birthday"));
-                intent.putExtra("Size", extras.getString("Size"));
-                //On continue a ajouter des valeurs pour la page suivante
                 EditText editTextNumber = (EditText) findViewById(R.id.editTextNumber);
-                intent.putExtra("Weight", editTextNumber.getText().toString());
-                startActivity(intent);
+                if (editTextNumber.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), String.format("Le champs est obligatoire"), Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(AskWeight.this, AskUsername.class);
+                    //On récupère les précédente valeur
+                    Bundle extras = getIntent().getExtras();
+                    intent.putExtra("Phone", extras.getString("Phone"));
+                    intent.putExtra("first_name", extras.getString("first_name"));
+                    intent.putExtra("last_name", extras.getString("last_name"));
+                    intent.putExtra("Gender", extras.getString("Gender"));
+                    intent.putExtra("birthday", extras.getString("birthday"));
+                    intent.putExtra("Size", extras.getString("Size"));
+                    //On continue a ajouter des valeurs pour la page suivante
+                    intent.putExtra("Weight", editTextNumber.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
     }

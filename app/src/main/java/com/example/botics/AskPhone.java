@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AskPhone extends AppCompatActivity {
 
@@ -19,10 +20,14 @@ public class AskPhone extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AskPhone.this, AskProfil.class);
                 EditText editTextPhone = (EditText) findViewById(R.id.editTextPhone);
-                intent.putExtra("Phone", editTextPhone.getText().toString());
-                startActivity(intent);
+                if (editTextPhone.getText().toString().equals("")){//Si le champ est vide
+                    Toast.makeText(getApplicationContext(), String.format("Le champs est obligatoire"), Toast.LENGTH_SHORT).show();
+                }else{
+                    Intent intent = new Intent(AskPhone.this, AskProfil.class);
+                    intent.putExtra("Phone", editTextPhone.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
     }
