@@ -30,35 +30,48 @@ public class AskUsername extends AppCompatActivity {
         continuer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Creation de l'objet
-                User user = new User();
                 EditText inputPseudo = (EditText) findViewById(R.id.inputPseudo);
                 EditText inputMail = (EditText) findViewById(R.id.inputMail);
                 EditText inputMdp = (EditText) findViewById(R.id.inputMdp);
-                user.setPseudo(inputPseudo.getText().toString());
-                user.setEmail(inputMail.getText().toString());
-                user.setPassword(inputMdp.getText().toString());
-                //Creation de la requete POST
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://botics.fr/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                CreateUser service = retrofit.create(CreateUser.class);
-                Call<User> call = service.sendUser(user);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        Toast.makeText(getApplicationContext(), String.format(String.valueOf(response.body())), Toast.LENGTH_SHORT).show();
-                    }
+                if (inputPseudo.getText().toString().equals("") || inputMail.getText().toString().equals("") || inputMdp.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), String.format("Les champs sont obligatoire"), Toast.LENGTH_SHORT).show();
+                }else{
+                    //Creation de l'objet
+                    User user = new User();
+                    user.setPseudo(inputPseudo.getText().toString());
+                    user.setEmail(inputMail.getText().toString());
+                    user.setPassword(inputMdp.getText().toString());
+                    //Valeur des pages présédente
+                    Bundle extras = getIntent().getExtras();
+                    user.setPhone_number(extras.getString("Phone"));
+                    user.setFirst_name(extras.getString("first_name"));
+                    user.setLast_name(extras.getString("last_name"));
+                    user.setGender(extras.getString("Gender"));
+                    user.setBirthday(extras.getString("birthday"));
+                    user.setSize(Double.valueOf(extras.getString("Size")));
+                    user.setWeight(Double.valueOf(extras.getString("Weight")));
+                    //Creation de la requete POST
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl("http://botics.fr/")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                    CreateUser service = retrofit.create(CreateUser.class);
+                    Call<User> call = service.sendUser(user);
+                    call.enqueue(new Callback() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            Toast.makeText(getApplicationContext(), String.format("Compte bien créer !"), Toast.LENGTH_SHORT).show();
+                        }
 
-                    @Override
-                    public void onFailure(Call call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), String.format(String.valueOf(t)), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                //Redirection vers la page MakeAccout
-                /*Intent intent = new Intent(AskUsername.this, MakeAccount.class);
-                startActivity(intent);*/
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+                            Toast.makeText(getApplicationContext(), String.format(String.valueOf(t)), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    //Redirection vers la page MakeAccout
+                    Intent intent = new Intent(AskUsername.this, MakeAccount.class);
+                    startActivity(intent);
+                }
             }
         });
     }

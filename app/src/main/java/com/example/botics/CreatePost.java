@@ -41,34 +41,38 @@ public class CreatePost extends AppCompatActivity {
         publier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Creation de l'objet
-                Post post = new Post();
                 EditText publier = (EditText) findViewById(R.id.InputDescription);
-                post.setDescription(publier.getText().toString());
-                SharedPreferences dataSave = getSharedPreferences("ID_user", 0);
-                Integer ID_user = Integer.parseInt(dataSave.getString("ID_user", ""));
-                post.setID_user(ID_user);
-                //Creation de la requete POST
-                Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl("http://botics.fr/")
-                        .addConverterFactory(GsonConverterFactory.create())
-                        .build();
-                Interface.CreatePost service = retrofit.create(Interface.CreatePost.class);
-                Call<Post> call = service.sendPost(post);
-                call.enqueue(new Callback() {
-                    @Override
-                    public void onResponse(Call call, Response response) {
-                        //Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
-                    }
+                if (publier.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), String.format("Le champs est obligatoire"), Toast.LENGTH_SHORT).show();
+                }else{
+                    //Creation de l'objet
+                    Post post = new Post();
+                    post.setDescription(publier.getText().toString());
+                    SharedPreferences dataSave = getSharedPreferences("ID_user", 0);
+                    Integer ID_user = Integer.parseInt(dataSave.getString("ID_user", ""));
+                    post.setID_user(ID_user);
+                    //Creation de la requete POST
+                    Retrofit retrofit = new Retrofit.Builder()
+                            .baseUrl("http://botics.fr/")
+                            .addConverterFactory(GsonConverterFactory.create())
+                            .build();
+                    Interface.CreatePost service = retrofit.create(Interface.CreatePost.class);
+                    Call<Post> call = service.sendPost(post);
+                    call.enqueue(new Callback() {
+                        @Override
+                        public void onResponse(Call call, Response response) {
+                            //Toast.makeText(getApplicationContext(), String.format("KO"), Toast.LENGTH_SHORT).show();
+                        }
 
-                    @Override
-                    public void onFailure(Call call, Throwable t) {
-                        //Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
-                    }
-                });
-                //A la fin, redirection sur la page Social
-                Intent intent = new Intent(CreatePost.this, Social.class);
-                startActivity(intent);
+                        @Override
+                        public void onFailure(Call call, Throwable t) {
+                            //Toast.makeText(getApplicationContext(), String.format("OK"), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    //A la fin, redirection sur la page Social
+                    Intent intent = new Intent(CreatePost.this, Social.class);
+                    startActivity(intent);
+                }
             }
         });
     }

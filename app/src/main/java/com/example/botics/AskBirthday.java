@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,8 +39,8 @@ public class AskBirthday extends AppCompatActivity implements AdapterView.OnItem
 
         // ---------- Configuration du Spinner du mois ----------
         String[] arrayMounth = new String[] {
-                "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet",
-                "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+                "01","02", "03", "04", "05", "06", "07",
+                "08", "09", "10", "11", "12"
         };
         Spinner mounth = (Spinner) findViewById(R.id.spinner_mounth);
         ArrayAdapter<String> adapter_mounth = new ArrayAdapter<String>(this,
@@ -74,6 +75,20 @@ public class AskBirthday extends AppCompatActivity implements AdapterView.OnItem
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AskBirthday.this, AskSize.class);
+                //On récupère les précédente valeur
+                Bundle extras = getIntent().getExtras();
+                intent.putExtra("Phone", extras.getString("Phone"));
+                intent.putExtra("first_name", extras.getString("first_name"));
+                intent.putExtra("last_name", extras.getString("last_name"));
+                intent.putExtra("Gender", extras.getString("Gender"));
+                //On continue a ajouter des valeurs pour la page suivante
+                Spinner spinner_day = (Spinner) findViewById(R.id.spinner_day);
+                String day = spinner_day.getSelectedItem().toString();
+                Spinner spinner_mounth = (Spinner) findViewById(R.id.spinner_mounth);
+                String mounth = spinner_mounth.getSelectedItem().toString();
+                Spinner spinner_year = (Spinner) findViewById(R.id.spinner_year);
+                String year = spinner_year.getSelectedItem().toString();
+                intent.putExtra("birthday", year+"-"+mounth+"-"+day);
                 startActivity(intent);
             }
         });
@@ -84,7 +99,6 @@ public class AskBirthday extends AppCompatActivity implements AdapterView.OnItem
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
         ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
-        Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT ).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {}
