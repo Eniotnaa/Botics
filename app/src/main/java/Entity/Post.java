@@ -5,7 +5,7 @@ import java.util.Date;
 public class Post {
     private int ID_publication;
     private String description;
-    private Date date_creation;
+    private String date_creation;
     private int count_like;
     private int count_comment;
     private int ID_user;
@@ -27,11 +27,11 @@ public class Post {
         this.description = description;
     }
 
-    public Date getDate_creation() {
+    public String getDate_creation() {
         return date_creation;
     }
 
-    public void setDate_creation(Date date_creation) {
+    public void setDate_creation(String date_creation) {
         this.date_creation = date_creation;
     }
 
